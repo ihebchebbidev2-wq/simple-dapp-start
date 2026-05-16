@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {e
+          extend: {
+            colors: {
+              "tertiary-fixed": "#dfe3e5",
+              "primary": "#ffb68b",
+              "inverse-on-surface": "#2f3133",
+              "tertiary-container": "#999d9f",
+              "surface-tint": "#ffb68b",
+              "on-tertiary-fixed": "#181c1e",
+              "on-primary": "#522300",
+              "primary-fixed": "#ffdbc8",
+              "on-tertiary": "#2d3133",
+              "error-container": "#93000a",
+              "primary-container": "#f47b20",
+              "on-error": "#690005",
+              "on-surface": "#e2e2e5",
+              "on-tertiary-container": "#303536",
+              "secondary-container": "#484949",
+              "tertiary-fixed-dim": "#c3c7c9",
+              "surface-container-low": "#1a1c1e",
+              "on-secondary-fixed": "#1a1c1c",
+              "surface-container-lowest": "#0c0e10",
+              "surface-container": "#1e2022",
+              "on-error-container": "#ffdad6",
+              "surface-container-highest": "#333537",
+              "error": "#ffb4ab",
+              "on-background": "#e2e2e5",
+              "outline-variant": "#574237",
+              "on-secondary": "#2f3131",
+              "secondary-fixed": "#e3e2e2",
+              "on-secondary-fixed-variant": "#464747",
+              "on-surface-variant": "#dec1b1",
+              "surface-container-high": "#282a2c",
+              "surface-bright": "#37393b",
+              "surface-variant": "#333537",
+              "on-secondary-container": "#b8b8b8",
+              "primary-fixed-dim": "#ffb68b",
+              "outline": "#a68b7d",
+              "background": "#121416",
+              "on-tertiary-fixed-variant": "#434749",
+              "surface-dim": "#121416",
+              "inverse-primary": "#994700",
+              "inverse-surface": "#e2e2e5",
+              "tertiary": "#c3c7c9",
+              "on-primary-container": "#582600",
+              "surface": "#121416",
+              "on-primary-fixed-variant": "#753400",
+              "secondary-fixed-dim": "#c6c6c6",
+              "secondary": "#c6c6c6",
+              "on-primary-fixed": "#321200"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+            animation: {
+              'marquee': 'marquee 25s linear infinite',
+            },
+            keyframes: {
+              marquee: {
+                '0%': { transform: 'translateX(0%)' },
+                '100%': { transform: 'translateX(-50%)' },
+              }
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .landing-theme-scope {
+            scroll-behavior: smooth;
+        }
+        .machined-gradient {
+            background: linear-gradient(135deg, #ffb68b 0%, #f47b20 100%);
+        }
+        .metallic-glass {
+            background: rgba(198, 198, 198, 0.1);
+            backdrop-filter: blur(20px);
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0c0e10; }
+        ::-webkit-scrollbar-thumb { background: #333537; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #ffb68b; }
+        .kinetic-path {
+            clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-white">
+<div class="landing-theme-scope">
+<!-- Urgency Banner -->
+<div class="bg-error-container text-on-error-container py-3 px-8 flex justify-center items-center gap-6 sticky top-0 z-[60] border-b border-error/20">
+<div class="flex items-center gap-2 font-label text-xs font-black uppercase tracking-widest">
+<span class="material-symbols-outlined text-lg animate-pulse">timer</span>
+<span>Limited Time Offer: 20%aa Off Alkkl Turbochargers</span>
+</div>
+<div class="hidden md:flex items-center gap-2 font-headline font-black text-lg tabular-nums">
+<span class="bg-on-error-container text-error-container px-2 py-0.5 rounded-sm">04</span>:
+        <span class="bg-on-error-container text-error-container px-2 py-0.5 rounded-sm">22</span>:
+        <span class="bg-on-error-container text-error-container px-2 py-0.5 rounded-sm">15</span>
+</div>
+<button class="bg-on-error-container text-error-container px-4 py-1 font-label text-[10px] font-black uppercase tracking-tighter hover:bg-white transition-colors">Claim Discount</button>
+</div>
+<!-- Announcement Bar -->
+<aside class="bg-surface-container-highest text-on-surface py-2 text-center overflow-hidden border-b border-outline-variant/10">
+<div class="inline-flex items-center gap-4 animate-marquee whitespace-nowrap px-4 font-label text-xs font-bold uppercase tracking-[0.2em]">
+<span>Global Logistics Support Enabled</span>
+<span class="opacity-50">•</span>
+<span>Bulk Pricing Available for Authorized Distributors</span>
+<span class="opacity-50">•</span>
+<span>Next-Day Shipping on Engine Components</span>
+<span class="opacity-50">•</span>
+<span>Remquip Precision Engineering Excellence</span>
+</div>
+</aside>
+<!-- TopAppBar -->
+<header class="bg-[#121416]/95 backdrop-blur-md border-b border-[#333537] sticky top-[48px] z-50 shadow-none">
+<nav class="flex justify-between items-center w-full px-8 py-4 max-w-[1440px] mx-auto">
+<div class="text-2xl font-black tracking-tighter text-[#c6c6c6] dark:text-[#c6c6c6]">
+                    REMQUIP
+                </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-['Space_Grotesk'] uppercase tracking-[0.1em] text-sm font-bold text-[#c6c6c6] hover:text-white transition-colors" href="#">EQUIPMENT</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-[0.1em] text-sm font-bold text-[#ffb68b] border-b-2 border-[#ffb68b] pb-1" href="#">PARTS</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-[0.1em] text-sm font-bold text-[#c6c6c6] hover:text-white transition-colors" href="#">SERVICES</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-[0.1em] text-sm font-bold text-[#c6c6c6] hover:text-white transition-colors" href="#">TRAINING</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-[0.1em] text-sm font-bold text-[#c6c6c6] hover:text-white transition-colors" href="#">SUPPORT</a>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4 text-[#c6c6c6]">
+<button class="hover:bg-[#1a1c1e] p-2 transition-all duration-200 relative">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-primary rounded-full"></span>
+</button>
+<button class="hover:bg-[#1a1c1e] p-2 transition-all duration-200">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+<button class="machined-gradient text-on-primary-container px-6 py-2.5 font-label font-bold uppercase tracking-wider text-xs scale-95 active:scale-90 transition-transform">
+                        GET QUOTE
+                    </button>
+</div>
+</nav>
+</header>
+<!-- Hero Section -->
+<section class="relative min-h-[850px] flex items-center overflow-hidden bg-surface">
+<div class="absolute inset-0 z-0 opacity-40">
+<img alt="Industrial manufacturing facility" class="w-full h-full object-cover grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCusKk6HorEiJqONb7oUZRHvO4dMGMI8krfZ05NHwPUgnFegJCbDyPgsA180HVPSkSxr71nmZ0DywAUfv1Umhz0kiQ8muYRh0nh9j1DJuW42ZYm2Cq-HcsyUn80Box4i5bY5mAyXOOmKkHBll6f5q4nhE4AbByydyfuYId67SFfG40l1M88j49_-kWcgojSEIqLTRqY5mmzf1Xn0OnI5KTWNU5h06vPntiBfARV6TPbjBTcT44qNknjTQ6ISdoPynMCnM-AMyUOtt1b"/>
+<div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/80 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-[1440px] mx-auto px-8 w-full">
+<div class="max-w-3xl">
+<span class="font-label text-primary uppercase tracking-[0.3em] text-sm font-bold block mb-6">Engineered for Extremes</span>
+<h1 class="font-headline text-6xl md:text-8xl font-black text-on-surface leading-[0.9] tracking-tighter mb-8 uppercase">
+                        Heavy Duty <br/> <span class="text-secondary">Precision</span>
+</h1>
+<p class="font-body text-xl text-on-surface-variant max-w-xl mb-10 leading-relaxed">
+                        Supplying tier-one mission critical components for mining, construction, and maritime operations. When downtime is not an option, Remquip is the solution.
+                    </p>
+<div class="flex flex-wrap gap-4 mb-8">
+<button class="machined-gradient px-10 py-5 font-label font-black uppercase tracking-widest text-sm text-on-primary scale-100 hover:scale-105 active:scale-95 transition-all shadow-[0_0_30px_rgba(244,123,32,0.3)]">
+                            Explore Catalog
+                        </button>
+<button class="bg-surface-container-high border border-outline-variant/20 px-10 py-5 font-label font-black uppercase tracking-widest text-sm text-on-surface hover:bg-surface-bright transition-all">
+                            Technical Support
+                        </button>
+</div>
+<!-- Secondary Conversion Points -->
+<div class="flex flex-wrap gap-x-8 gap-y-4 border-t border-outline-variant/20 pt-8">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">local_shipping</span>
+<span class="font-label text-xs font-bold uppercase tracking-widest">Free Shipping Over $5,000</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">inventory_2</span>
+<span class="font-label text-xs font-bold uppercase tracking-widest">Bulk Pricing Available</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Visual Hierarchy Guide (Kinetic Monolith) -->
+<div class="absolute bottom-0 right-0 w-1/2 h-[500px] z-0 pointer-events-none">
+<div class="absolute bottom-0 right-0 w-full h-full bg-gradient-to-tl from-primary/10 to-transparent opacity-30 transform skew-x-[-20deg] origin-bottom-right"></div>
+<div class="absolute bottom-12 right-12 w-32 h-[400px] bg-primary/5 transform -rotate-12 border-r border-primary/20"></div>
+</div>
+</section>
+<!-- Trust Bar (Social Proof) -->
+<section class="bg-surface-container py-12 border-y border-outline-variant/10">
+<div class="max-w-[1440px] mx-auto px-8">
+<p class="font-label text-[10px] font-black uppercase tracking-[0.4em] text-center text-on-surface-variant mb-10">Trusted by Global Giants in Mining, Construction &amp; Maritime</p>
+<div class="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-30 grayscale contrast-125">
+<div class="text-3xl font-black tracking-tighter italic">TERRA-CON</div>
+<div class="text-3xl font-black tracking-widest">NORSE MARITIME</div>
+<div class="text-3xl font-black tracking-tighter">ORE-CORP</div>
+<div class="text-3xl font-black tracking-widest italic">HEAVY-CO</div>
+<div class="text-3xl font-black tracking-tighter underline decoration-4">GLOBAL-MIN</div>
+</div>
+</div>
+</section>
+<!-- Featured Categories -->
+<section class="py-24 px-8 max-w-[1440px] mx-auto">
+<div class="flex justify-between items-end mb-16">
+<div>
+<h2 class="font-headline text-4xl font-bold uppercase tracking-tight">Core Inventory</h2>
+<div class="h-1 w-20 bg-primary mt-4"></div>
+</div>
+<a class="font-label text-primary uppercase tracking-widest text-xs font-black flex items-center gap-2 hover:gap-4 transition-all" href="#">
+                    View All Categories <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-6 h-auto md:h-[800px]">
+<!-- Main Category -->
+<div class="md:col-span-2 md:row-span-2 bg-surface-container-low group relative overflow-hidden">
+<img alt="Engines" class="w-full h-full object-cover opacity-50 grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFQpR9cCZVMaiJQ5gJ0j9R8uvvfYf6qyqaleS4VVB6_yTkRp3OKuVh7EaoTaFiP737xwUaMqTQTW5Jc0Q0YdOt3Ae1VXm8yhAOuCnN-LBhUs0daNxKaM9Y0nkjMmOyGKzcoLelYEFqZnCYQcMX5T2OcXiG4x1Yv3b3GD2tnjFReCpl29HqFnhL3Kbz7ScdmzNExiVXZMD6DZRs4LUI_Lf7rs2bqu-fztzdpMfeprZw6UqeoxFmX72pJwrSfCk4miWQuPZmTbmiZqus"/>
+<div class="absolute inset-0 p-8 flex flex-col justify-end bg-gradient-to-t from-background via-background/40 to-transparent">
+<span class="font-label text-primary text-xs font-black tracking-widest mb-2 uppercase">Precision Core</span>
+<h3 class="font-headline text-3xl font-black uppercase mb-4">Engines &amp; Assemblies</h3>
+<p class="font-body text-sm text-on-surface-variant max-w-sm mb-6">Complete powertrain solutions for industrial scale machinery and heavy fleet vehicles.</p>
+<button class="machined-gradient w-fit px-8 py-3 text-on-primary font-label text-xs font-black tracking-widest uppercase flex items-center gap-2 group/btn">
+    Shop All Engines <span class="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Secondary Categories -->
+<div class="md:col-span-2 md:row-span-1 bg-surface-container-low group relative overflow-hidden">
+<img alt="Transmissions" class="w-full h-full object-cover opacity-40 grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYP5prMgvKmPUY3p3phmDeolueRmdF3lNDxiPaXyuwC0Lx6cwMULRDyNjpo_i13xbOvtjRJBXRxw35lzLxU-pPhWA73xCXH1dPMiiVxah-ANANDSCsEQZeEPYDMzKg-ICnHu6lHdd7p4G6iI8RefcRFstX5mvmkWpnVjpmcbb6J7uuZ9bkkjGOeBoK82FMzazPqJcYcsdMaT4UlteWJStbel1CLlQKNMEfEtVzGzHRe1WJjl6Qcoz93Cr1J7aSO5rSjGUsgLWl_JGn"/>
+<div class="absolute inset-0 p-8 flex flex-col justify-end bg-gradient-to-t from-background via-background/20 to-transparent">
+<h3 class="font-headline text-2xl font-black uppercase mb-4">Transmissions</h3>
+<button class="bg-surface-container-highest/80 backdrop-blur-sm w-fit px-6 py-2.5 text-on-surface font-label text-xs font-black tracking-widest uppercase border border-outline-variant/30 hover:bg-primary hover:text-on-primary transition-all">
+    Shop Gears
+</button>
+</div>
+</div>
+<div class="md:col-span-1 md:row-span-1 bg-surface-container-low group relative overflow-hidden">
+<img alt="Braking" class="w-full h-full object-cover opacity-40 grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBauTfIrXJn3ppOVB6UyEDXRvq0esNtPJ2IkGLpUvXgdu64vwic7Wzi8uavpCYZtfU_b2ds5NcskuLerhDCb-v8DEJZliQojtPfuxSTRJ4t-sOytUyHpzm4ihM98CMSzbzplE5wBHwdcORwNy3rBfvZ5yYM-GZesQzaAIpVddYl4IeS9C2dqDqeAeJ6ToY24QxVM6wWYuOwYInwU863zYQfy9AouEIHiU5dPyBBGgztSnTJkO1giv9s6bpDAmm0djzSEGBC8xgqSvQs"/>
+<div class="absolute inset-0 p-6 flex flex-col justify-end bg-gradient-to-t from-background to-transparent">
+<h3 class="font-headline text-xl font-black uppercase mb-4">Braking</h3>
+<button class="bg-surface-container-highest/80 backdrop-blur-sm w-fit px-4 py-2 text-on-surface font-label text-[10px] font-black tracking-widest uppercase border border-outline-variant/30 hover:bg-primary hover:text-on-primary transition-all">
+    Shop Parts
+</button>
+</div>
+</div>
+<div class="md:col-span-1 md:row-span-1 bg-surface-container-low group relative overflow-hidden">
+<img alt="Hydraulics" class="w-full h-full object-cover opacity-40 grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxrWO9awEcXYm70pbA3fuW7Z6UM4Xd034yyHwSRIOr97eRuu83LAQEIBcBPvjPWhUjhODF4PYDDZSPiz9w1dt_vB_bi8ql9uinH67fDwK9kXsSUQMV3YdOHlMwYsr3zE52OCD7wqkVut7l7cnnDwxYdFeZmOM72R18wXfxiMsXUcTNoKBxRIxPP8d8efoFpLbg_BlrQmgDzs3ZsKTdolJJCkiku4LZrsBI2lsxWrf4W_be-0uleK-SJhzUS_SsN86ooC3IGSFuoeHw"/>
+<div class="absolute inset-0 p-6 flex flex-col justify-end bg-gradient-to-t from-background to-transparent">
+<h3 class="font-headline text-xl font-black uppercase mb-4">Hydraulics</h3>
+<button class="bg-surface-container-highest/80 backdrop-blur-sm w-fit px-4 py-2 text-on-surface font-label text-[10px] font-black tracking-widest uppercase border border-outline-variant/30 hover:bg-primary hover:text-on-primary transition-all">
+    Shop Parts
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Products -->
+<section class="bg-surface-container-lowest py-24 relative overflow-hidden">
+<!-- Visual eye-guider monolith -->
+<div class="absolute top-0 left-0 w-24 h-full bg-surface-container transform -skew-x-12 -translate-x-12 opacity-50 border-r border-outline-variant/10"></div>
+<div class="max-w-[1440px] mx-auto px-8 relative z-10">
+<div class="mb-12">
+<span class="font-label text-primary font-bold tracking-[0.2em] text-xs uppercase">Precision Parts Catalog</span>
+<h2 class="font-headline text-4xl font-bold uppercase mt-2">Available for Immediate Dispatch</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-outline-variant/10 border border-outline-variant/10">
+<!-- Product Card 1 -->
+<div class="bg-surface p-8 group hover:bg-surface-container-low transition-colors flex flex-col h-full">
+<div class="aspect-square bg-surface-container-high mb-6 overflow-hidden relative">
+<img alt="Fuel Injector" class="w-full h-full object-cover group-hover:scale-105 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCS8t-YGsqrE6eCJNU4uOmiVxO8OwJOnSDByY50LVcsZANEYEJ94boXZjs_fVG9KKPWYBYKZ2hlNiWZWRS2yakDcNFHtbakCyr20Z7GSk6x-902MmMTgcLJzK57JEeCvsU63p_U_ehB1KKV-t8P13OmvlZZk8uyuKnT8gkmPFMWjf9c7AhMocREowu_9_He__nNtkYV9aj6weqO-fvlmLjgKk2O9nFt0tvX8j_1UNtpj_b1Qx7iM_ilaE-M6JZUQC-kda0D_VGvWlHZ"/>
+<span class="absolute top-4 right-4 bg-primary text-on-primary font-label text-[10px] font-black px-2 py-1 uppercase">In Stock</span>
+</div>
+<div class="flex flex-col gap-2 flex-grow">
+<span class="font-label text-tertiary text-[10px] font-bold uppercase tracking-widest">SKU: RQ-9902-X</span>
+<h4 class="font-headline text-lg font-bold uppercase leading-tight">High-Pressure Fuel Injector Series V</h4>
+<p class="font-body text-sm text-on-surface-variant mb-6">Optimized for Tier 4 Final diesel engines.</p>
+</div>
+<div class="mt-auto pt-6 border-t border-outline-variant/10">
+<div class="flex justify-between items-baseline mb-6">
+<span class="font-headline text-2xl font-black text-primary">$1,245.00</span>
+<a class="font-label text-[10px] font-bold uppercase text-on-surface-variant hover:text-primary transition-colors underline decoration-primary/30" href="#">View Specs</a>
+</div>
+<button class="machined-gradient w-full py-4 text-on-primary font-label text-xs font-black uppercase tracking-widest flex items-center justify-center gap-2 hover:brightness-110 active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined text-lg">shopping_cart</span>
+        Add to Cart
+    </button>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-surface p-8 group hover:bg-surface-container-low transition-colors flex flex-col h-full">
+<div class="aspect-square bg-surface-container-high mb-6 overflow-hidden relative">
+<img alt="Rotor" class="w-full h-full object-cover group-hover:scale-105 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCovMRS6JvUkfP_S67EC5f1wg9HF7JohI27od88i2Rsx9Cja8dMxrcIwsN6JPq_jOiYYYqjB_sakXkJonwuSqjRCG1vRG0zJ7_TAlVcHWfNzQw090TIQ2rH4i1IyUjHtXF3FLxaaZXw3jIxVu-p8pw7zAep_GdfdbK3MRid_tQ83oMikrrbb7Iv1hFcW7w_G8Co5vgqZmA8qwPW4zCNCNBo67caew221yn141JazL3oWpuCeewEfycy6YglwERgziwGV0ZPyHLbmYy8"/>
+<span class="absolute top-4 right-4 bg-tertiary-container text-on-tertiary-container font-label text-[10px] font-black px-2 py-1 uppercase">Limited</span>
+</div>
+<div class="flex flex-col gap-2 flex-grow">
+<span class="font-label text-tertiary text-[10px] font-bold uppercase tracking-widest">SKU: RQ-BRK-88</span>
+<h4 class="font-headline text-lg font-bold uppercase leading-tight">Titanium-Steel Hybrid Rotor</h4>
+<p class="font-body text-sm text-on-surface-variant mb-6">For heavy excavation braking systems.</p>
+</div>
+<div class="mt-auto pt-6 border-t border-outline-variant/10">
+<div class="flex justify-between items-baseline mb-6">
+<span class="font-headline text-2xl font-black text-primary">$890.00</span>
+<a class="font-label text-[10px] font-bold uppercase text-on-surface-variant hover:text-primary transition-colors underline decoration-primary/30" href="#">View Specs</a>
+</div>
+<button class="machined-gradient w-full py-4 text-on-primary font-label text-xs font-black uppercase tracking-widest flex items-center justify-center gap-2 hover:brightness-110 active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined text-lg">shopping_cart</span>
+        Add to Cart
+    </button>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="bg-surface p-8 group hover:bg-surface-container-low transition-colors flex flex-col h-full">
+<div class="aspect-square bg-surface-container-high mb-6 overflow-hidden relative">
+<img alt="Gasket Kit" class="w-full h-full object-cover group-hover:scale-105 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFI4ApWWrHutlCtgqTrqQ0G_U7Yor7BBcXM7zIaaqL9QdFYPH7D6pJSEeEQQ36Ai8hY-lVqTCImRbA1DXnm2_36_dG6S3iWigASkVOhIu1G7TeYRBiCnOvjKmsp0PR_WF4RRCwrYin-zQ5grp5gP_jAiwY-RBvJ57VED3_uEN-IWdLS5KfwTaVeJZpap_uP_j46eNerscPdXwzbFC3lj114slQrmsIz3FVrJco9q5UoJVOBYn_7fx3wjIc1WyyIrh3BLYhIsYJdI6P"/>
+</div>
+<div class="flex flex-col gap-2 flex-grow">
+<span class="font-label text-tertiary text-[10px] font-bold uppercase tracking-widest">SKU: RQ-GSK-112</span>
+<h4 class="font-headline text-lg font-bold uppercase leading-tight">Advanced Sealing Gasket Kit</h4>
+<p class="font-body text-sm text-on-surface-variant mb-6">Thermal-resistant composite materials.</p>
+</div>
+<div class="mt-auto pt-6 border-t border-outline-variant/10">
+<div class="flex justify-between items-baseline mb-6">
+<span class="font-headline text-2xl font-black text-primary">$412.50</span>
+<a class="font-label text-[10px] font-bold uppercase text-on-surface-variant hover:text-primary transition-colors underline decoration-primary/30" href="#">View Specs</a>
+</div>
+<button class="machined-gradient w-full py-4 text-on-primary font-label text-xs font-black uppercase tracking-widest flex items-center justify-center gap-2 hover:brightness-110 active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined text-lg">shopping_cart</span>
+        Add to Cart
+    </button>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="bg-surface p-8 group hover:bg-surface-container-low transition-colors flex flex-col h-full">
+<div class="aspect-square bg-surface-container-high mb-6 overflow-hidden relative">
+<img alt="Turbocharger" class="w-full h-full object-cover group-hover:scale-105 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnsg40HnFOYOx7t8dP4XiRLcp3gYC4yJUrS26U4Hos-HN4uakGnYHsqvqWEl-0nsGp5BY8gQQ5-RO1XuA2fNo7vOGOjd7yrl_YAtjG9QyTNEtLQmXGYYp8k0bFD73I7D4nqggqsgqZzaxPkluRKCP3HRnYjM65hSwlQospGoM1c7TrYXz0uoxwA0IyaoO3-tFcdS6mLBO3-Tzeg9Amy07yDOmCTSK84UJhYdQilSIPBY3GXA72aQw7xOjcvZB2uYS2L0yzY5g0e1I_"/>
+<span class="absolute top-4 right-4 bg-error text-on-error font-label text-[10px] font-black px-2 py-1 uppercase">-20% DEAL</span>
+</div>
+<div class="flex flex-col gap-2 flex-grow">
+<span class="font-label text-tertiary text-[10px] font-bold uppercase tracking-widest">SKU: RQ-TRB-X9</span>
+<h4 class="font-headline text-lg font-bold uppercase leading-tight">Variable Geometry Turbocharger</h4>
+<p class="font-body text-sm text-on-surface-variant mb-6">Increased efficiency for marine diesel engines.</p>
+</div>
+<div class="mt-auto pt-6 border-t border-outline-variant/10">
+<div class="flex justify-between items-baseline mb-6">
+<div class="flex flex-col">
+<span class="font-body text-xs text-on-surface-variant line-through">$4,812.50</span>
+<span class="font-headline text-2xl font-black text-primary">$3,850.00</span>
+</div>
+<a class="font-label text-[10px] font-bold uppercase text-on-surface-variant hover:text-primary transition-colors underline decoration-primary/30" href="#">View Specs</a>
+</div>
+<button class="machined-gradient w-full py-4 text-on-primary font-label text-xs font-black uppercase tracking-widest flex items-center justify-center gap-2 hover:brightness-110 active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined text-lg">shopping_cart</span>
+        Add to Cart
+    </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Customer Reviews Section -->
+<section class="py-24 px-8 bg-surface">
+<div class="max-w-[1440px] mx-auto">
+<div class="text-center mb-16">
+<span class="font-label text-primary font-bold tracking-[0.2em] text-xs uppercase">Field Reports</span>
+<h2 class="font-headline text-4xl font-bold uppercase mt-2">Verified Industry Success</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Review 1 -->
+<div class="bg-surface-container p-8 border-l-4 border-primary">
+<div class="flex text-primary mb-4">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body text-on-surface mb-6 italic">"Reduced our fleet downtime by 24% after switching to Remquip assemblies. The technical support is unmatched."</p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-surface-container-highest rounded-full flex items-center justify-center font-black text-xs">MW</div>
+<div>
+<h4 class="font-label font-bold text-xs uppercase">Marcus Weber</h4>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest">Fleet Manager, Global Mining Inc.</p>
+</div>
+</div>
+</div>
+<!-- Review 2 -->
+<div class="bg-surface-container p-8 border-l-4 border-primary">
+<div class="flex text-primary mb-4">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body text-on-surface mb-6 italic">"The real-time inventory API integrated perfectly with our ERP. Bulk pricing saved us over $200k this quarter alone."</p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-surface-container-highest rounded-full flex items-center justify-center font-black text-xs">SJ</div>
+<div>
+<h4 class="font-label font-bold text-xs uppercase">Sarah Jensen</h4>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest">Procurement Director, Norse Maritime</p>
+</div>
+</div>
+</div>
+<!-- Review 3 -->
+<div class="bg-surface-container p-8 border-l-4 border-primary">
+<div class="flex text-primary mb-4">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body text-on-surface mb-6 italic">"Their precision rotors outlasted the OEM parts by two field seasons. Remquip is now our primary components partner."</p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-surface-container-highest rounded-full flex items-center justify-center font-black text-xs">RK</div>
+<div>
+<h4 class="font-label font-bold text-xs uppercase">Robert Kovic</h4>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest">Chief Engineer, Terra-Con Projects</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Wholesale CTA -->
+<section class="py-24 bg-surface-container-lowest relative overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_50%,rgba(244,123,32,0.1),transparent)]"></div>
+</div>
+<div class="relative z-10 max-w-5xl mx-auto px-8">
+<div class="bg-surface-container-high p-12 md:p-20 border-l-8 border-primary relative shadow-2xl">
+<div class="max-w-2xl">
+<span class="font-label text-primary font-black uppercase tracking-[0.2em] text-xs mb-4 block">Exclusive Partnership</span>
+<h2 class="font-headline text-4xl font-black uppercase mb-6 tracking-tight leading-none">Join 500+ Authorized <br/> Remquip Dealers Worldwide</h2>
+<p class="font-body text-lg text-on-surface-variant mb-10 leading-relaxed">
+                            Access our full technical schematics, wholesale pricing tiers, and priority logistics. We empower industrial partners with the inventory they need to dominate their regional markets.
+                        </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<h4 class="font-label font-bold text-sm uppercase">Global Logistics</h4>
+<p class="text-xs text-on-surface-variant mt-1">Landed costs calculated in real-time for over 120 countries.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<h4 class="font-label font-bold text-sm uppercase">API Integration</h4>
+<p class="text-xs text-on-surface-variant mt-1">Connect your ERP directly to our live inventory system.</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<input class="bg-surface-container-lowest border border-outline-variant/30 text-white font-label text-sm px-6 py-4 flex-grow focus:ring-1 focus:ring-primary outline-none" placeholder="ENTER WORK EMAIL" type="email"/>
+<button class="machined-gradient text-on-primary font-label font-black uppercase tracking-widest px-10 py-4 transition-all hover:brightness-110 shadow-lg">Apply Now</button>
+</div>
+</div>
+<!-- Floating Industrial Badge -->
+<div class="hidden lg:block absolute -top-8 -right-8 w-40 h-40 bg-surface-container-highest border border-outline-variant/30 rotate-12 flex items-center justify-center p-8 text-center shadow-2xl">
+<span class="font-label font-black text-[10px] leading-tight uppercase text-secondary">ISO 9001:2015 CERTIFIED FACILITY</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-[#0c0e10] dark:bg-[#0c0e10] py-16 px-8 mt-20">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex flex-col items-center md:items-start gap-4">
+<div class="text-xl font-bold text-[#c6c6c6]">REMQUIP</div>
+<p class="font-['Inter'] uppercase tracking-[0.1em] text-[10px] font-medium text-[#999d9f]">© 2024 REMQUIP INDUSTRIAL SOLUTIONS. ALL RIGHTS RESERVED.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-['Inter'] uppercase tracking-[0.1em] text-xs font-medium text-[#999d9f] hover:text-white hover:underline decoration-[#f47b20] underline-offset-4 transition-opacity opacity-80 hover:opacity-100" href="#">PRIVACY POLICY</a>
+<a class="font-['Inter'] uppercase tracking-[0.1em] text-xs font-medium text-[#999d9f] hover:text-white hover:underline decoration-[#f47b20] underline-offset-4 transition-opacity opacity-80 hover:opacity-100" href="#">TERMS OF SERVICE</a>
+<a class="font-['Inter'] uppercase tracking-[0.1em] text-xs font-medium text-[#999d9f] hover:text-white hover:underline decoration-[#f47b20] underline-offset-4 transition-opacity opacity-80 hover:opacity-100" href="#">WARRANTY</a>
+<a class="font-['Inter'] uppercase tracking-[0.1em] text-xs font-medium text-[#999d9f] hover:text-white hover:underline decoration-[#f47b20] underline-offset-4 transition-opacity opacity-80 hover:opacity-100" href="#">DISTRIBUTOR LOGIN</a>
+<a class="font-['Inter'] uppercase tracking-[0.1em] text-xs font-medium text-[#999d9f] hover:text-white hover:underline decoration-[#f47b20] underline-offset-4 transition-opacity opacity-80 hover:opacity-100" href="#">CONTACT</a>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

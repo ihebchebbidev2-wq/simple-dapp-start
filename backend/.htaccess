@@ -1,0 +1,13 @@
+# Optional: SPA uses api.php?path=... (no rewrite required). Rewrite below is for pretty URLs → index.php.
+# Apache + mod_rewrite — API front controller (deploy this folder as /remquip/backend/)
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  # If routes 404 on production, set this to your public URL path for this folder (leading/trailing slash as shown).
+  RewriteBase /remquip/backend/
+  # CORS preflight (OPTIONS) must hit index.php so cors.php runs
+  RewriteCond %{REQUEST_METHOD} OPTIONS
+  RewriteRule ^ index.php [QSA,L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^ index.php [QSA,L]
+</IfModule>
