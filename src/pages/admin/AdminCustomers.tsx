@@ -2041,7 +2041,12 @@ export default function AdminCustomers({ contractOnly = false, leadOnly = false 
             </Button>
             <input ref={importInputRef} type="file" className="hidden" onChange={handleImportCustomersChange} />
             <Button size="sm" onClick={() => setShowCreateModal(true)}>
-              <Plus className="h-3.5 w-3.5 mr-1.5" /> {t("admin.customers.add")}
+              <Plus className="h-3.5 w-3.5 mr-1.5" />{" "}
+              {contractOnly
+                ? "Create Contract Customer manually"
+                : leadOnly
+                ? "New Lead"
+                : t("admin.customers.add")}
             </Button>
           </div>
         }
