@@ -182,8 +182,8 @@ define('DEBUG_MODE', false);
 // the client is ready to go live. These act as fallbacks if the per-row
 // credentials in remquip_integrations are empty.
 // =====================================================================
-define('QBO_CLIENT_ID',     'ABu4rCgJ9IhmhruNyaMV4JoshxKaeqrU78qJN4CpuQW5duPFAZ');
-define('QBO_CLIENT_SECRET', 'NOejDR9doxKiyi4IK8l4RrjSkGv6qyhCrTbZkjQX');
+define('QBO_CLIENT_ID',     'ABi2JqLCCh2kpaZTlf4nDNGAIJYcST5Feo7uSPWoEdFLgqj3TP');
+define('QBO_CLIENT_SECRET', 'MN0DkW53veSuoUzrWPX0A96fPs3XA7n4LTitVgQe');
 define('QBO_ENVIRONMENT',   'sandbox'); // 'sandbox' | 'production'
 define('QBO_REDIRECT_URI',  FRONTEND_URL . '/admin/integrations/oauth/quickbooks');
 define('QBO_WEBHOOK_VERIFIER_TOKEN', ''); // paste from Intuit → Webhooks once configured
