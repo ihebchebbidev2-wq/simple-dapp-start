@@ -366,6 +366,12 @@ export default function AdminIntegrations() {
             const it = byProvider[meta.id];
             const status: Status = (it?.status as Status) ?? "disconnected";
             const canAuthorizeQuickBooks = meta.id === "quickbooks" && Boolean(it?.has_credentials);
+            const qboTokenExpired = meta.id === "quickbooks" && it?.token_expires_at
+              ? new Date(it.token_expires_at).getTime() <= Date.now()
+              : false;
+            const qboNeedsReconnect = meta.id === "quickbooks" && (
+              status === "error" || qboTokenExpired || (Boolean(it?.has_credentials) && status === "disconnected")
+            );
             return (
               <Card key={meta.id} className="overflow-hidden transition-shadow hover:shadow-md">
                 <div className="h-1.5" style={{ background: meta.brandColor }} />
