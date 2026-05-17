@@ -422,12 +422,18 @@ export default function AdminIntegrations() {
                     {canAuthorizeQuickBooks && (
                       <Button
                         size="sm"
-                        variant="default"
+                        variant={qboNeedsReconnect ? "destructive" : "default"}
                         disabled={busy === `${meta.id}:oauth`}
                         onClick={() => startOAuth(meta.id)}
                       >
-                        {busy === `${meta.id}:oauth` ? <Loader2 className="h-4 w-4 mr-1.5 animate-spin" /> : <ExternalLink className="h-4 w-4 mr-1.5" />}
-                        Authorize QuickBooks
+                        {busy === `${meta.id}:oauth`
+                          ? <Loader2 className="h-4 w-4 mr-1.5 animate-spin" />
+                          : qboNeedsReconnect
+                            ? <RefreshCw className="h-4 w-4 mr-1.5" />
+                            : <ExternalLink className="h-4 w-4 mr-1.5" />}
+                        {qboNeedsReconnect
+                          ? (qboTokenExpired ? "Reconnect QuickBooks (token expired)" : "Reconnect QuickBooks")
+                          : "Authorize QuickBooks"}
                       </Button>
                     )}
                     {status !== "connected" ? (
