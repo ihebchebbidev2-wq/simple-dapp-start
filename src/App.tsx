@@ -17,6 +17,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import { ConfirmProvider } from "@/components/ConfirmDialog";
 import ProtectedRoute from "@/components/ProtectedRoute";
 import { GlobalToastBridge } from "@/components/GlobalToastBridge";
+import { QuickBooksConnectPrompt } from "@/components/QuickBooksConnectPrompt";
 // TaskReminderModal moved into AdminLayout — admin-only by design
 
 import HomeLandingRoute from "@/pages/HomeLandingRoute";
@@ -108,6 +109,7 @@ const App = () => (
                 <ScrollToTop />
                 <CookieConsent />
                 <ChatWidget />
+                <QuickBooksConnectPrompt />
                 <Suspense fallback={<PageLoader />}>
                   <Routes>
                     {/* Public */}
