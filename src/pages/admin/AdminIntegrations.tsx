@@ -366,6 +366,12 @@ export default function AdminIntegrations() {
             const it = byProvider[meta.id];
             const status: Status = (it?.status as Status) ?? "disconnected";
             const canAuthorizeQuickBooks = meta.id === "quickbooks" && Boolean(it?.has_credentials);
+            const qboTokenExpired = meta.id === "quickbooks" && it?.token_expires_at
+              ? new Date(it.token_expires_at).getTime() <= Date.now()
+              : false;
+            const qboNeedsReconnect = meta.id === "quickbooks" && (
+              status === "error" || qboTokenExpired || (Boolean(it?.has_credentials) && status === "disconnected")
+            );
             return (
               <Card key={meta.id} className="overflow-hidden transition-shadow hover:shadow-md">
                 <div className="h-1.5" style={{ background: meta.brandColor }} />
@@ -416,12 +422,18 @@ export default function AdminIntegrations() {
                     {canAuthorizeQuickBooks && (
                       <Button
                         size="sm"
-                        variant="default"
+                        variant={qboNeedsReconnect ? "destructive" : "default"}
                         disabled={busy === `${meta.id}:oauth`}
                         onClick={() => startOAuth(meta.id)}
                       >
-                        {busy === `${meta.id}:oauth` ? <Loader2 className="h-4 w-4 mr-1.5 animate-spin" /> : <ExternalLink className="h-4 w-4 mr-1.5" />}
-                        Authorize QuickBooks
+                        {busy === `${meta.id}:oauth`
+                          ? <Loader2 className="h-4 w-4 mr-1.5 animate-spin" />
+                          : qboNeedsReconnect
+                            ? <RefreshCw className="h-4 w-4 mr-1.5" />
+                            : <ExternalLink className="h-4 w-4 mr-1.5" />}
+                        {qboNeedsReconnect
+                          ? (qboTokenExpired ? "Reconnect QuickBooks (token expired)" : "Reconnect QuickBooks")
+                          : "Authorize QuickBooks"}
                       </Button>
                     )}
                     {status !== "connected" ? (
